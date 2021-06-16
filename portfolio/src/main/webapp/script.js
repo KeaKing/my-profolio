@@ -26,3 +26,23 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+/**
+ * Adds a random picture to the page.
+ */
+function getRandomPicture() {
+    
+    const pictures = ["image1.jpg", "image2.jpg", "image4.jpg", "image7.jpg", "image8.jpg", "image10.jpg", "image11.jpg", "image12.jpg", "image14.jpg", "image15.jpg", "image16.jpg"];
+
+    // Holds the index for pictures
+    var index = Math.floor(Math.random() * pictures.length)
+
+    // Holds the route for the picture
+    const picture = "/images/" + pictures[index];
+
+    //Adds the picture to the page
+    const pictureContainer = document.getElementById("picture");     
+    pictureContainer.src = picture;
+    pictureContainer.style = "width:700px;height:500px;display:block;";
+    
+}
