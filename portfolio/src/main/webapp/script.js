@@ -38,11 +38,20 @@ function getRandomPicture() {
     var index = Math.floor(Math.random() * pictures.length)
 
     // Holds the route for the picture
-    const picture = "/images/" + pictures[index];
+    const picture = "images/" + pictures[index];
 
     //Adds the picture to the page
     const pictureContainer = document.getElementById("picture");     
     pictureContainer.src = picture;
     pictureContainer.style = "width:700px;height:500px;display:block;";
     
+}
+
+/** Fetches the current date from the server and adds it to the page. */
+async function showServerTime() {
+  const responseFromServer = await fetch('/date');
+  const textFromResponse = await responseFromServer.text();
+
+  const dateContainer = document.getElementById('date-container');
+  dateContainer.innerText = textFromResponse;
 }
